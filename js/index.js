@@ -35,13 +35,19 @@ $(function() {
       }
     });
 
-    // 마우스휠 플러그인
-    $(window).on('mousewheel', function(event, delta){
-      if(delta > 0) { 
-        $('header').removeClass('fade');
-      } else if(delta < 0){
-        $('header').addClass('fade');
-      }
+    // 스크롤 시 헤더 애니메이션
+    var last_pos= 0;
+
+    $(window).scroll(function () {
+       var current_pos= $(this).scrollTop();
+
+       if (current_pos > last_pos) {
+          $('header').addClass('fade');
+       } else {
+          $('header').removeClass('fade');
+       }
+
+       last_pos = current_pos;
     });
 
     // #go_to_top 누르면 화면 제일 위로 가기
