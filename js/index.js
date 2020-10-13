@@ -39,10 +39,12 @@ $(function() {
     var last_pos= 0;
 
     $(window).scroll(function () {
-       var current_pos= $(this).scrollTop();
+       var current_pos = $(this).scrollTop();
 
        if (current_pos > last_pos) {
           $('header').addClass('fade');
+       } else if (current_pos == 0) {
+          $('header').removeClass('fade');
        } else {
           $('header').removeClass('fade');
        }
@@ -66,39 +68,32 @@ $(function() {
           info_title1 = $('.info_title1').offset().top,
           info_title2 = $('.info_title2').offset().top - $(window).height();
 
+      // .info_txt .txt1 부분까지 스크롤 했을 때 더 알아보기 아이콘 나타남
       if(info < w_scroll) {
           $('#learn_more').animate({left:20}, 500);
       } else {
           $('#learn_more').stop(1,1).animate({left:-120}, 500)
       }
 
+      // 스크롤 시 위로 가는 아이콘 나타남
       if(w_scroll >= 300) {
         $('#go_to_top').stop().animate({opacity:1}, 500);
       } else {
         $('#go_to_top').stop().animate({opacity:0}, 500);
       }
 
+      // .gallery까지 스크롤 했을 때 사진 애니메이션
       if(w_scroll > work) {
         $('#works ul li').addClass('showing');
       } else {
         $('#works ul li').removeClass('showing');
       }
 
+      // .info_title2에서 200px 더 스크롤 했을 때 .box 나타나는 애니메이션
       if(hb_scroll >= info_title2 + 200) {
         $('.info_title2 .box').addClass('ta_da');
       } else {
         $('.info_title2 .box').removeClass('ta_da');
       }
-
-      // if(hb_scroll >= info_title1 - $(window).height() && hb_scroll < info_title1 - $(window).height() + $(window).height()/2) {
-      //   var moveX = Math.floor((100 * (hb_scroll - info_title1 + $(window).height()) / $(window).height() * 2));
-      //   info_txt1.css('transform','translateX(' + (-moveX) + '%)');
-      //   info_txt2.css('transform','translateX(' + moveX + '%)');
-      //   info_txt3.css('transform','translateX(' + (-moveX * 1.5) + '%)');
-      // } else if(hb_scroll >= info_title1 - $(window).height() + $(window).height()/2) {
-      //     info_txt1.css('transform','translateX(' + (-100) + '%)');
-      //     info_txt2.css('transform','translateX(' + 100 + '%)');
-      //     info_txt3.css('transform','translateX(' + (-150) + '%)');
-      // }
     });
 });
