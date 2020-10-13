@@ -93,10 +93,6 @@ a { display:block; text-decoration:none; }
                 .container .main #info .info_txt .info_title1 { font-family:'Raleway', "Helvetica Neue","Apple SD Gothic Neo",sans-serif; font-size:3.7em; font-weight:900; }
                     .container .main #info .info_txt .info_title1 span { display:block; position:relative; }
 
-                    /* .container .main #info .info_txt .info_title1 .title_txt1 { left:100%; }
-                    .container .main #info .info_txt .info_title1 .title_txt2 { left:-100%; }
-                    .container .main #info .info_txt .info_title1 .title_txt3 { left:150%; } */
-
                 .container .main #info .info_txt .txt1 { font-weight:700; font-size:2em; line-height:1.4; letter-spacing:-3px; margin:90px 75px 10px 0; display:flex; justify-content:flex-end; }
 
                 .container .main #info .info_txt .txt2 { font-weight:700; font-size:1.2em; display:flex; justify-content:flex-end; }
@@ -154,8 +150,8 @@ a { display:block; text-decoration:none; }
 
                 .container .main #fin .front_txt { z-index:3; }
                 .container .main #fin #front_txt1 { bottom:5%; right:40%; }
-                .container .main #fin #front_txt2 { bottom:7%; right:-2%; }
-                .container .main #fin #front_txt3 { bottom:-3%; right:10%; }
+                .container .main #fin #front_txt2 { bottom:-3%; right:30%; }
+                .container .main #fin #front_txt3 { bottom:7%; right:-5%; }
 
             .container .main #fin img { width:110%; align-self:center; margin-top:110px; position:relative; z-index:2; }
 
