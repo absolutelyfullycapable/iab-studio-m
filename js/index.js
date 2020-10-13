@@ -19,11 +19,6 @@ $(function() {
       }
     });
 
-    // .tap 누르면 검색창 나타나는 애니메이션
-    $('.tap').on('click', function() {
-      $('form').toggleClass('act');
-    });
-
     // Swiper 플러그인
     var swiper = new Swiper('.swiper-container', {
         slidesPerView:'auto'
