@@ -41,7 +41,7 @@ $(function() {
     });
 
     // 마우스휠 플러그인
-    $('body').on('mousewheel', function(event, delta){
+    $(window).on('mousewheel', function(event, delta){
       if(delta > 0) { 
         $('header').removeClass('fade');
       } else if(delta < 0){
