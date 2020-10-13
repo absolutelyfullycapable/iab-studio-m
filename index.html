@@ -36,13 +36,16 @@
         <!-- script 연결 -->
         <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/jquery-ui-dist@1.12.1/jquery-ui.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.js"></script>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
         <script src="common/swiper-bundle.min.js"></script>
         <script src="js/index.js"></script>
     </head>
 
     <body>
         <div class="container">
-            <!-- mobile header -->
+            <!-- header -->
             <header>
                 <h1><a href="index.html">logo</a></h1>
                 <div class="menu_icon">
@@ -51,15 +54,9 @@
                 </div>
             </header>
 
-            <!-- mobile navigation -->
+            <!-- navigation -->
             <nav>
-                <div class="tap">
-                    <a href="#"><img src="images/search.svg" alt="search"></a>
-                </div>
-                <form>
-                    <input type="text" class="search_txt">
-                    <button>검색</button>
-                </form>
+                <P><strong>IAB studio</strong>for you</P>
                 <ul>
                     <li>about us</li>
                     <li>news</li>
@@ -72,7 +69,7 @@
             <div class="main">
                 <section id="video">
                     <div class="video_box">
-                        <video src="video/main_video.mp4" muted loop autoplay>
+                        <video src="video/main_video.mp4" muted loop autoplay playsinline>
                             <source src="video/main_video.mp4" type="video/mp4">
                             <source src="video/main_video.webm" type="video/webm">
                         </video>
@@ -131,7 +128,9 @@
                 <section id="info">
                     <div class="info_txt">
                         <div class="info_title1">
-                            go beyond<br>the<br>limits
+                            <span class="title_txt1">go beyond</span>
+                            <span class="title_txt2">the</span>
+                            <span class="title_txt3">limits</span>
                         </div>
 
                         <div class="txt1">
@@ -258,13 +257,13 @@
                 <section id="fin">
                     <h2>WE'VE BEEN DOING WHAT WE DO</h2>
                     <div class="tap"><a href="#">문의하기</a></div>
-                    <p class="txt back_txt" id="back_txt1">AND</p>
-                    <p class="txt back_txt" id="back_txt2">THAT'S</p>
-                    <p class="txt back_txt" id="back_txt3">WHAT</p>
+                    <p class="txt back_txt" id="back_txt1" data-aos="fade-right" data-aos-duration="1500">AND</p>
+                    <p class="txt back_txt" id="back_txt2" data-aos="fade-right" data-aos-duration="1500">THAT'S</p>
+                    <p class="txt back_txt" id="back_txt3" data-aos="fade-right" data-aos-duration="1500">WHAT</p>
                     <img src="images/directors.png" alt="directors">
-                    <p class="txt front_txt" id="front_txt1">GOT</p>
-                    <p class="txt front_txt" id="front_txt2">US</p>
-                    <p class="txt front_txt" id="front_txt3">HERE</p>
+                    <p class="txt front_txt" id="front_txt1" data-aos="fade-left" data-aos-duration="1500">GOT</p>
+                    <p class="txt front_txt" id="front_txt2" data-aos="fade-left" data-aos-duration="1500">US</p>
+                    <p class="txt front_txt" id="front_txt3" data-aos="fade-left" data-aos-duration="1500">HERE</p>
                 </section> <!-- fin -->
 
                 <section id="news" class="news-container">
@@ -329,9 +328,9 @@
                     <div class="swiper-button-next"></div>
                     <div class="swiper-button-prev"></div>
                     
-                    <div class="bg_circle1"></div>
-                    <div class="bg_circle2"></div>
-                    <div class="bg_circle3"></div>
+                    <div id="bg_circle1" class="bg_circle"><img src="images/bg_circle1.png" alt="bg_circle1"></div>
+                    <div id="bg_circle2" class="bg_circle"><img src="images/bg_circle2.png" alt="bg_circle2"></div>
+                    <div id="bg_circle3" class="bg_circle"><img src="images/bg_circle3.png" alt="bg_circle3"></div>
                 </section> <!-- news -->
             </div> <!-- main -->
 
@@ -360,5 +359,9 @@
             <div id="go_to_top"></div>
             <div id="learn_more">더 알아보기</div>
         </div> <!-- container -->
+
+        <script>
+            AOS.init();
+          </script>
     </body>
 </html>

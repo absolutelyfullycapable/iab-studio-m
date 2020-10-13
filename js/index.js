@@ -7,19 +7,21 @@ $(function() {
     // 헤더 메뉴 아이콘 누르면 내비게이션 나타나는 애니메이션
     $('.menu_icon').on('click', function() {
       var show = $(this).hasClass('active');
+
       if(show == 0) {
-        $('.main').animate({opacity: 0.5});
-        $('footer').animate({opacity: 0.5});
         $(this).addClass('active');
         $('header').addClass('active');
         $('nav').addClass('active');
       } else {
-        $('.main').animate({opacity: 1});
-        $('footer').animate({opacity: 1});
         $(this).removeClass('active');
         $('header').removeClass('active');
         $('nav').removeClass('active');
       }
+    });
+
+    // .tap 누르면 검색창 나타나는 애니메이션
+    $('.tap').on('click', function() {
+      $('form').toggleClass('act');
     });
 
     // Swiper 플러그인
@@ -38,6 +40,15 @@ $(function() {
       }
     });
 
+    // 마우스휠 플러그인
+    $('body').on('mousewheel', function(event, delta){
+      if(delta > 0) { 
+        $('header').removeClass('fade');
+      } else if(delta < 0){
+        $('header').addClass('fade');
+      }
+    });
+
     // #go_to_top 누르면 화면 제일 위로 가기
     $('#go_to_top').on('click', function () {
       $('html, body').animate({
@@ -47,15 +58,20 @@ $(function() {
 
     // 스크롤 시 나타나는 애니메이션
     $(window).scroll(function() {
-      let w_scroll = $(window).scrollTop();
-      let obj = $('#info').offset().top - $(window).height();
-      let work = $('#works .gallery').offset().top - $(window).height();
-      let info_title2 = $('.info_title2').offset().top - $(window).height();
+      var w_scroll = $(window).scrollTop(),
+          hb_scroll = $('html, body').scrollTop() || $(window).scrollTop(),
+          info = $('#info .info_txt .txt1').offset().top - $(window).height(),
+          work = $('#works .gallery').offset().top - $(window).height(),
+          info_title1 = $('.info_title1').offset().top,
+          info_title2 = $('.info_title2').offset().top - $(window).height(),
+          info_txt1 = $('.title_txt1'),
+          info_txt2 = $('.title_txt2'),
+          info_txt3 = $('.title_txt3');
 
-      if(obj < w_scroll) {
-          $('#learn_more').animate({right:40}, 500);
+      if(info < w_scroll) {
+          $('#learn_more').animate({left:20}, 500);
       } else {
-          $('#learn_more').stop(1,1).animate({right:-120}, 500)
+          $('#learn_more').stop(1,1).animate({left:-120}, 500)
       }
 
       if(w_scroll >= 300) {
@@ -70,10 +86,21 @@ $(function() {
         $('#works ul li').removeClass('showing');
       }
 
-      if(w_scroll > info_title2 + 100) {
-        $('.info_title2 .box').stop().animate({opacity:1}, 500);
+      if(hb_scroll >= info_title2 + 200) {
+        $('.info_title2 .box').addClass('ta_da');
       } else {
-        $('.info_title2 .box').stop().animate({opacity:0}, 200);
+        $('.info_title2 .box').removeClass('ta_da');
       }
-  });
+
+      if(hb_scroll >= info_title1 - $(window).height() && hb_scroll < info_title1 - $(window).height() + $(window).height()/2) {
+        var moveX = Math.floor((100 * (hb_scroll - info_title1 + $(window).height()) / $(window).height() * 2));
+        info_txt1.css('transform','translateX(' + (-moveX) + '%)');
+        info_txt2.css('transform','translateX(' + moveX + '%)');
+        info_txt3.css('transform','translateX(' + (-moveX * 1.5) + '%)');
+      } else if(hb_scroll >= info_title1 - $(window).height() + $(window).height()/2) {
+          info_txt1.css('transform','translateX(' + (-100) + '%)');
+          info_txt2.css('transform','translateX(' + 100 + '%)');
+          info_txt3.css('transform','translateX(' + (-150) + '%)');
+      }
+    });
 });
