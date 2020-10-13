@@ -63,10 +63,7 @@ $(function() {
           info = $('#info .info_txt .txt1').offset().top - $(window).height(),
           work = $('#works .gallery').offset().top - $(window).height(),
           info_title1 = $('.info_title1').offset().top,
-          info_title2 = $('.info_title2').offset().top - $(window).height(),
-          info_txt1 = $('.title_txt1'),
-          info_txt2 = $('.title_txt2'),
-          info_txt3 = $('.title_txt3');
+          info_title2 = $('.info_title2').offset().top - $(window).height();
 
       if(info < w_scroll) {
           $('#learn_more').animate({left:20}, 500);
