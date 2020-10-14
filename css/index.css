@@ -214,6 +214,8 @@ a { display:block; text-decoration:none; }
 
     
 
+    /*** go to top ***/
     .container #go_to_top { position:fixed; bottom:20px; right:20px; width:30px; height:30px; background:url(../images/to_top.svg) no-repeat 50% 50%; background-size:20px; z-index:9; opacity:0; }
 
+    /*** learn more ***/
     .container #learn_more { width:75px; height:75px; line-height:75px; background-color:#ffe71b; border-radius:50%; text-align:center; font-weight:500; font-size:0.9em; position:fixed; bottom:20px; left:-120px; z-index:1; }

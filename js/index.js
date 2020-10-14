@@ -68,11 +68,13 @@ $(function() {
           info_title1 = $('.info_title1').offset().top,
           info_title2 = $('.info_title2').offset().top - $(window).height();
 
-      // .info_txt .txt1 부분까지 스크롤 했을 때 더 알아보기 아이콘 나타남
+      // .info_txt .txt1 부분까지 스크롤 했을 때 더 알아보기 아이콘 나타남 + video 투명도 0
       if(info < w_scroll) {
           $('#learn_more').animate({left:20}, 500);
+          $('video').css('opacity', 0);
       } else {
-          $('#learn_more').stop(1,1).animate({left:-120}, 500)
+          $('#learn_more').stop(1,1).animate({left:-120}, 500);
+          $('video').css('opacity', 1);
       }
 
       // 스크롤 시 위로 가는 아이콘 나타남
