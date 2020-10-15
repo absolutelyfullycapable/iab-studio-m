@@ -45,6 +45,17 @@ $(function() {
 
     // 스크롤 시 나타나는 애니메이션
     var last_pos= 0;
+    $(window).scroll(function() {
+      var current_pos = $(window).scrollTop();
+
+      if (current_pos > last_pos) {
+        $('header').addClass('fade');
+     } else {
+        $('header').removeClass('fade');
+     }
+
+     last_pos = current_pos;
+    });
 
     $(window).scroll(function() {
       var w_scroll = $(window).scrollTop(),
@@ -54,13 +65,10 @@ $(function() {
           info_title1 = $('.info_title1').offset().top,
           info_title2 = $('.info_title2').offset().top - $(window).height();
 
-       if (w_scroll > last_pos) {
-          $('header').addClass('fade');
-       } else {
-          $('header').removeClass('fade');
-       }
-
-       last_pos = w_scroll;
+      // 제일 위로 스크롤 했을 때 header 애니메이션
+      if(w_scroll == 0) {
+        $('header').removeClass('fade');
+      }
 
       // .info_txt .txt1 부분까지 스크롤 했을 때 더 알아보기 아이콘 나타남 + video 투명도 0
       if(info < w_scroll) {
