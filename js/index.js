@@ -43,6 +43,9 @@ $(function() {
 
        if (current_pos > last_pos) {
           $('header').addClass('fade');
+       } else if(current_pos == 0) {
+          $('header').removeClass('fade');
+          $('header').css({'opacity':1, 'top': 0});
        } else {
           $('header').removeClass('fade');
        }
