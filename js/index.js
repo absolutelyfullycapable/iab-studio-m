@@ -43,8 +43,6 @@ $(function() {
 
        if (current_pos > last_pos) {
           $('header').addClass('fade');
-       } else if (current_pos == 0) {
-          $('header').removeClass('fade');
        } else {
           $('header').removeClass('fade');
        }
@@ -57,6 +55,7 @@ $(function() {
       $('html, body').animate({
           scrollTop: 0
       }, 1100);
+      $('header').removeClass('fade');
     });
 
     // 스크롤 시 나타나는 애니메이션
