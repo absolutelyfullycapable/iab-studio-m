@@ -35,24 +35,6 @@ $(function() {
       }
     });
 
-    // 스크롤 시 헤더 애니메이션
-    var last_pos= 0;
-
-    $(window).scroll(function () {
-       var current_pos = $(this).scrollTop();
-
-       if (current_pos > last_pos) {
-          $('header').addClass('fade');
-       } else if(current_pos == 0) {
-          $('header').removeClass('fade');
-          $('header').css({'opacity':1, 'top': 0});
-       } else {
-          $('header').removeClass('fade');
-       }
-
-       last_pos = current_pos;
-    });
-
     // #go_to_top 누르면 화면 제일 위로 가기
     $('#go_to_top').on('click', function () {
       $('html, body').animate({
@@ -62,6 +44,8 @@ $(function() {
     });
 
     // 스크롤 시 나타나는 애니메이션
+    var last_pos= 0;
+
     $(window).scroll(function() {
       var w_scroll = $(window).scrollTop(),
           hb_scroll = $('html, body').scrollTop() || $(window).scrollTop(),
@@ -69,6 +53,14 @@ $(function() {
           work = $('#works .gallery').offset().top - $(window).height(),
           info_title1 = $('.info_title1').offset().top,
           info_title2 = $('.info_title2').offset().top - $(window).height();
+
+       if (w_scroll > last_pos) {
+          $('header').addClass('fade');
+       } else {
+          $('header').removeClass('fade');
+       }
+
+       last_pos = w_scroll;
 
       // .info_txt .txt1 부분까지 스크롤 했을 때 더 알아보기 아이콘 나타남 + video 투명도 0
       if(info < w_scroll) {
