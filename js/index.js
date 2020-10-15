@@ -60,6 +60,8 @@ $(function() {
           $('header').removeClass('fade');
        }
 
+       last_pos = w_scroll;
+
       // .info_txt .txt1 부분까지 스크롤 했을 때 더 알아보기 아이콘 나타남 + video 투명도 0
       if(info < w_scroll) {
           $('#learn_more').animate({left:20}, 500);
