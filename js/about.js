@@ -21,7 +21,8 @@ $(function() {
 
     // Swiper 플러그인
     var swiper = new Swiper('.swiper-container', {
-        slidesPerView:'auto'
+        slidesPerView:'auto',
+        freeMode: true
     });
 
     // 스크롤 시 history section 효과
