@@ -4,15 +4,17 @@ $(function() {
       e.preventDefault();
     });
 
-    // 헤더 메뉴 아이콘 누르면 내비게이션 나타나는 애니메이션
+    // 헤더 메뉴 아이콘 클릭 시 내비게이션 애니메이션
     $('.menu_icon').on('click', function() {
       var show = $(this).hasClass('active');
 
       if(show == 0) {
+        $('.nav_bg').addClass('darken');
         $(this).addClass('active');
         $('header').addClass('active');
         $('nav').addClass('active');
       } else {
+        $('.nav_bg').removeClass('darken');
         $(this).removeClass('active');
         $('header').removeClass('active');
         $('nav').removeClass('active');
