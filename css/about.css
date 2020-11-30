@@ -48,19 +48,19 @@ a { display:block; text-decoration:none; }
         .container #main #main_title  { width:100%; margin:70px 0; overflow:hidden; }
             /* title */
             .container #main #main_title .title { position:relative; transform:rotate(-15deg) translateX(-30px); }
-                .container #main #main_title .title h2 { margin:0; font-size:4em; line-height:1.4; background:linear-gradient(#ffcc47, #ff4351, #2ea7d7); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+                .container #main #main_title .title h2 { margin:0; font-size:16vw; line-height:1.4; background:linear-gradient(#ffcc47, #ff4351, #2ea7d7); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
                     .container #main #main_title .title h2 span:first-of-type { margin-left:50px; }
                     .container #main #main_title .title h2 span:nth-of-type(2) { margin-left:90px; }
                     .container #main #main_title .title h2 span:nth-of-type(3) { margin-left:60px; }
                 
-                .container #main #main_title .description { position:absolute; top:190px; left:230px; }
+                .container #main #main_title .description { position:absolute; top:54%; left:60%; }
                     .container #main #main_title .title .description .dot { width:15px; height:15px; background-color:#ffe71b; border-radius:50%; }
                     .container #main #main_title .title .description p { font-family:'Raleway', "Helvetica Neue","Apple SD Gothic Neo",sans-serif; font-weight:500; font-size:0.95em; color:#222; margin:10px 0 0; }
 
             /* philosophy */
-            .container #main #main_title .philosophy { margin:80px 0 0 150px; color:#222; }
+            .container #main #main_title .philosophy { width:200px; display:flex; flex-direction:column; margin:80px 7% 0 auto; color:#222; }
                 .container #main #main_title .philosophy h3 { margin:20px 0; }
-                .container #main #main_title .philosophy p { line-height:1.4; font-size:1.05em; font-weight:400; }
+                .container #main #main_title .philosophy p { line-height:1.4; font-size:1.05em; font-weight:400; margin:0; }
                     .container #main #main_title .philosophy p span { font-weight:500; }
 
         /** value **/
@@ -113,6 +113,7 @@ a { display:block; text-decoration:none; }
 
     .container footer p:first-of-type { margin:20px 0 35px; }
     .container footer p:nth-of-type(2) { font-size:0.9em; color:rgb(105, 105, 105); }
+        .container footer p:nth-of-type(2) br { display:none; }
     .container footer p:last-of-type { margin:35px 0 0; padding-bottom:35px; }
 
     .container footer > div { display:flex; }
@@ -120,3 +121,20 @@ a { display:block; text-decoration:none; }
             .container footer > div ul:first-of-type li:last-of-type, .container footer > div ul:last-of-type li { font-weight:500; }
         
             .container footer > div ul li a { color:#000; }
+
+
+@media (min-width:767px) {
+    /*** main ***/
+        /** main title **/
+        .container #main #main_title { margin:30px 0 100px; }
+            /* title */
+            .container #main #main_title .description { top:57%; left:55%; }
+                .container #main #main_title .title .description p { font-size:1.5em; }
+
+        /** value **/
+        .container #main #value h3 { padding-top:100px; }
+        .container #main #value h2 { margin:20px auto 100px; }
+        
+    /*** footer ***/
+    .container footer p:nth-of-type(2) br { display:block; }
+}
