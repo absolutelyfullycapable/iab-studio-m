@@ -221,6 +221,7 @@ a { display:block; text-decoration:none; }
 
     /*** learn more ***/
     .container #learn_more { width:75px; height:75px; line-height:75px; background-color:#ffe71b; border-radius:50%; text-align:center; font-weight:500; font-size:0.9em; position:fixed; bottom:20px; left:-120px; z-index:1; }
+        .container #learn_more a { color:#000; }
 
 
 @media (min-width:767px) {
