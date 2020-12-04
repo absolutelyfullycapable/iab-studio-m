@@ -53,7 +53,7 @@ $(function() {
       var w_scroll = $(window).scrollTop(),
           history = $('#history').offset().top;
 
-      // 위로 가는 아이콘 나타남
+      // #go_to_top 아이콘 나타남
       if(w_scroll >= 300) {
         $('#go_to_top').stop().animate({opacity:1}, 500);
       } else {
