@@ -64,8 +64,8 @@ a { display:block; text-decoration:none; }
 
             /* philosophy */
             .container #main #main_title .philosophy { width:200px; display:flex; flex-direction:column; margin:80px 7% 0 auto; color:#222; }
-                .container #main #main_title .philosophy h3 { margin:20px 0; }
-                .container #main #main_title .philosophy p { line-height:1.4; font-size:1.05em; font-weight:400; margin:0; }
+                .container #main #main_title .philosophy h3 { margin:20px 0 40px; }
+                .container #main #main_title .philosophy p { line-height:1.4; font-size:1em; font-weight:400; margin:0; }
                     .container #main #main_title .philosophy p span { font-weight:500; }
 
         /** value **/
