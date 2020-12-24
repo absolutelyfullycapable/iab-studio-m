@@ -13,11 +13,13 @@ $(function() {
         $(this).addClass('active');
         $('header').addClass('active');
         $('nav').addClass('active');
+        $('html').css('overflow', 'hidden');
       } else {
         $('.nav_bg').removeClass('darken');
         $(this).removeClass('active');
         $('header').removeClass('active');
         $('nav').removeClass('active');
+        $('html').css('overflow', 'initial');
       }
     });
 
